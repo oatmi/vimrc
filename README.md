@@ -1,2 +1,2 @@
 
-~Vim Yes.~
+*Vim Yes.*
