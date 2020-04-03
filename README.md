@@ -1,2 +1,2 @@
 
-Vim YES!!!
+~Vim Yes.~
