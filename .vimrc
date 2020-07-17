@@ -11,7 +11,7 @@ set encoding=utf-8
 set foldmethod=indent
 set foldlevel=4
 set scrolloff=7
-set relativenumber
+"set relativenumber
 set number
 set nowrap
 set lazyredraw
@@ -34,8 +34,9 @@ iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
 let g:molokai_original = 1
 let g:rehash256 = 1
 color molokai
+" colorscheme one
 "set background=dark
-"colorscheme solarized
+"colorscheme solarized8
 "let g:solarized_termcolors=256
 
 " for vim-airline
@@ -43,13 +44,7 @@ let g:airline_theme='minimalist'
 " let g:airline_theme='luna'
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = '>'
-" let g:airline_solarized_bg='dark'
-
-" for markdown_preview
-let vim_markdown_preview_hotkey='<C-o>'
-let vim_markdown_preview_browser='Google Chrome'
-let vim_markdown_preview_temp_file=0
-let vim_markdown_preview_github=1
+let g:airline_solarized_bg='dark'
 
 " {{{ buf read
 autocmd BufReadPost *
@@ -81,7 +76,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
-Plugin 'lifepillar/vim-solarized8'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
