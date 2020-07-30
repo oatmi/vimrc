@@ -27,6 +27,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'patstockwell/vim-monokai-tasty'
+Plugin 'fatih/vim-go'
 " Plugin 'valloric/youcompleteme'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -127,6 +128,8 @@ autocmd BufReadPost *
 " COLORSCHEME {{{
 " if use a terminal that supports italic text
 let g:vim_monokai_tasty_italic = 0
+let g:rehash256 = 1
+let g:molokai_original = 1
 colorscheme vim-monokai-tasty
 
 " To use the included lightline.vim theme:
