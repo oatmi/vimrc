@@ -1,72 +1,4 @@
-syntax on
-set expandtab tabstop=4 shiftwidth=4 softtabstop=4
-set backspace=2
-set hlsearch
-set nobackup
-set incsearch
-set smartcase
-set mouse=v
-set autoindent
-set encoding=utf-8
-set foldmethod=indent
-set foldlevel=4
-set scrolloff=7
-"set relativenumber
-set number
-set nowrap
-set lazyredraw
-set ttyfast
-set cursorline
-set diffopt=context:0
-set t_Co=256
-
-let mapleader="-"
-nnoremap <leader><tab> :NERDTreeCWD<CR>
-nnoremap <leader>e :TagbarToggle<CR>
-nnoremap <leader>s :<C-u>call gitblame#echo()<CR>
-nnoremap <leader>c I//<C-c>
-
-nnoremap <tab>h <c-w>h
-nnoremap <tab>j <c-w>j
-nnoremap <tab>k <c-w>k
-nnoremap <tab>l <c-w>l
-iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
-
-let g:molokai_original = 1
-let g:rehash256 = 1
-let g:solarized_termcolors=256
-" set background=dark
-" color solarized8
-color molokai
-
-" vim-airline
-let g:airline_theme='luna'
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_solarized_bg='dark'
-
-" air-line
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" airline symbols
-let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-" let g:airline_symbols.linenr = ''
-
-" {{{ buf read
-autocmd BufReadPost *
-            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-            \   exe "normal! g'\"" |
-            \ endif
-" }}}
-
-" {{{ Vundle config Start
+" {{{ VUNDLE
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -92,6 +24,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
+Plugin 'patstockwell/vim-monokai-tasty'
 " Plugin 'valloric/youcompleteme'
 " Plugin 'ryanoasis/vim-devicons'
 
@@ -126,4 +59,80 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" }}}
+
+""" COMMON CONF {{{
+syntax on
+set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+set backspace=2
+set hlsearch
+set nobackup
+set incsearch
+set smartcase
+set mouse=v
+set autoindent
+set encoding=utf-8
+set foldmethod=marker
+set foldlevel=4
+set scrolloff=7
+"set relativenumber
+set number
+set nowrap
+set lazyredraw
+set ttyfast
+set cursorline
+set diffopt=context:0
+set t_Co=256
+
+let mapleader="-"
+nnoremap <leader><tab> :NERDTreeCWD<CR>
+nnoremap <leader>e :TagbarToggle<CR>
+nnoremap <leader>s :<C-u>call gitblame#echo()<CR>
+nnoremap <leader>c I//<C-c>
+
+nnoremap <tab>h <c-w>h
+nnoremap <tab>j <c-w>j
+nnoremap <tab>k <c-w>k
+nnoremap <tab>l <c-w>l
+iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
+" }}}
+
+" AIRLINE {{{
+let g:airline_theme='luna'
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''
+" }}}
+
+" {{{ buf read
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+            \   exe "normal! g'\"" |
+            \ endif
+" }}}
+
+" COLORSCHEME {{{
+" if use a terminal that supports italic text
+let g:vim_monokai_tasty_italic = 0
+colorscheme vim-monokai-tasty
+
+" To use the included lightline.vim theme:
+let g:lightline = {
+            \ 'colorscheme': 'monokai_tasty',
+            \ }
+
+" To use the included vim-airline theme:
+let g:airline_theme='monokai_tasty'
 " }}}
