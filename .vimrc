@@ -1,15 +1,17 @@
+" Before you started, Install Vundle!
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" And now, you are ready to VIM!
+
 " {{{ VUNDLE
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-" https://github.com/VundleVim/Vundle.vim
-" git clone https://github.com/VundleVim/Vundle.vim.git
-"
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -26,7 +28,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'patstockwell/vim-monokai-tasty'
 " Plugin 'valloric/youcompleteme'
-" Plugin 'ryanoasis/vim-devicons'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -61,7 +62,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " }}}
 
-""" COMMON CONF {{{
+" COMMON CONF {{{
 syntax on
 set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set backspace=2
@@ -100,23 +101,23 @@ iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
 " AIRLINE {{{
 let g:airline_theme='luna'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
+
+" if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+" endif
 
 " airline symbols
-let g:airline_left_sep = ''
+" let g:airline_left_sep = ''
 " let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
+" let g:airline_right_sep = ''
 " let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
 " let g:airline_symbols.linenr = ''
 " }}}
 
-" {{{ buf read
+" {{{ BUF
 autocmd BufReadPost *
             \ if line("'\"") > 0 && line ("'\"") <= line("$") |
             \   exe "normal! g'\"" |
