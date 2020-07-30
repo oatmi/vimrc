@@ -18,6 +18,7 @@ set lazyredraw
 set ttyfast
 set cursorline
 set diffopt=context:0
+set t_Co=256
 
 let mapleader="-"
 nnoremap <leader><tab> :NERDTreeCWD<CR>
@@ -33,24 +34,36 @@ iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
 
 let g:molokai_original = 1
 let g:rehash256 = 1
+let g:solarized_termcolors=256
+" set background=dark
+" color solarized8
 color molokai
-" colorscheme one
-"set background=dark
-"colorscheme solarized8
-"let g:solarized_termcolors=256
 
-" for vim-airline
-let g:airline_theme='minimalist'
-" let g:airline_theme='luna'
+" vim-airline
+let g:airline_theme='luna'
 " let g:airline#extensions#tabline#enabled = 1
-let g:airline_left_sep = '>'
-let g:airline_solarized_bg='dark'
+" let g:airline_solarized_bg='dark'
+
+" air-line
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''
 
 " {{{ buf read
 autocmd BufReadPost *
-			\ if line("'\"") > 0 && line ("'\"") <= line("$") |
-			\   exe "normal! g'\"" |
-			\ endif
+            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+            \   exe "normal! g'\"" |
+            \ endif
 " }}}
 
 " {{{ Vundle config Start
@@ -76,6 +89,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
+" Plugin 'valloric/youcompleteme'
+" Plugin 'ryanoasis/vim-devicons'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
