@@ -27,7 +27,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'patstockwell/vim-monokai-tasty'
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 " Plugin 'valloric/youcompleteme'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -102,7 +102,7 @@ iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
 " AIRLINE {{{
 let g:airline_theme='luna'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 " if !exists('g:airline_symbols')
 "     let g:airline_symbols = {}
