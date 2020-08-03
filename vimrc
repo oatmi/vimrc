@@ -100,7 +100,8 @@ iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
 " }}}
 
 " AIRLINE {{{
-let g:airline_theme='luna'
+" let g:airline_theme='luna'
+let g:airline_theme='minimalist'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 0
 
@@ -138,5 +139,5 @@ let g:lightline = {
             \ }
 
 " To use the included vim-airline theme:
-let g:airline_theme='monokai_tasty'
+" let g:airline_theme='monokai_tasty'
 " }}}
