@@ -26,7 +26,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
-Plugin 'patstockwell/vim-monokai-tasty'
+" Plugin 'patstockwell/vim-monokai-tasty'
+Plugin 'tomasr/molokai'
 " Plugin 'fatih/vim-go'
 " Plugin 'valloric/youcompleteme'
 
@@ -102,7 +103,7 @@ iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
 " AIRLINE {{{
 " let g:airline_theme='luna'
 let g:airline_theme='minimalist'
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 0
 
 " if !exists('g:airline_symbols')
@@ -131,7 +132,8 @@ autocmd BufReadPost *
 let g:vim_monokai_tasty_italic = 0
 let g:rehash256 = 1
 let g:molokai_original = 1
-colorscheme vim-monokai-tasty
+" colorscheme vim-monokai-tasty
+colorscheme molokai
 
 " To use the included lightline.vim theme:
 let g:lightline = {
