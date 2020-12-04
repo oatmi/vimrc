@@ -26,10 +26,11 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
-" Plugin 'patstockwell/vim-monokai-tasty'
 Plugin 'tomasr/molokai'
-" Plugin 'fatih/vim-go'
-" Plugin 'valloric/youcompleteme'
+Plugin 'fatih/vim-go'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'lifepillar/vim-solarized8'
+" Plugin 'patstockwell/vim-monokai-tasty'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -68,6 +69,7 @@ filetype plugin indent on    " required
 syntax on
 set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set backspace=2
+" set redrawtime=1000
 set hlsearch
 set nobackup
 set incsearch
@@ -78,20 +80,22 @@ set encoding=utf-8
 set foldmethod=marker
 set foldlevel=4
 set scrolloff=7
-"set relativenumber
-set number
+" set relativenumber
+" set number
 set nowrap
 set lazyredraw
 set ttyfast
 set cursorline
 set diffopt=context:0
 set t_Co=256
+"set colorcolumn=110
 
 let mapleader="-"
 nnoremap <leader><tab> :NERDTreeCWD<CR>
 nnoremap <leader>e :TagbarToggle<CR>
 nnoremap <leader>s :<C-u>call gitblame#echo()<CR>
 nnoremap <leader>c I//<C-c>
+nnoremap <leader>d :GoDef<CR>
 
 nnoremap <tab>h <c-w>h
 nnoremap <tab>j <c-w>j
@@ -129,17 +133,21 @@ autocmd BufReadPost *
 
 " COLORSCHEME {{{
 " if use a terminal that supports italic text
-let g:vim_monokai_tasty_italic = 0
-let g:rehash256 = 1
-let g:molokai_original = 1
+" let g:vim_monokai_tasty_italic = 0
+" let g:rehash256 = 1
+" let g:molokai_original = 1
+let g:solarized_use16 = 1
 " colorscheme vim-monokai-tasty
-colorscheme molokai
+" colorscheme molokai
+set background=dark
+colorscheme solarized8
+
 
 " To use the included lightline.vim theme:
-let g:lightline = {
-            \ 'colorscheme': 'monokai_tasty',
-            \ }
-
+" let g:lightline = {
+"             \ 'colorscheme': 'monokai_tasty',
+"             \ }
+" 
 " To use the included vim-airline theme:
 " let g:airline_theme='monokai_tasty'
 " }}}
