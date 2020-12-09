@@ -138,9 +138,9 @@ autocmd BufReadPost *
 " let g:molokai_original = 1
 let g:solarized_use16 = 1
 " colorscheme vim-monokai-tasty
-" colorscheme molokai
+colorscheme molokai
 set background=dark
-colorscheme solarized8
+" colorscheme solarized8
 
 
 " To use the included lightline.vim theme:
