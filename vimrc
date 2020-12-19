@@ -90,17 +90,23 @@ set diffopt=context:0
 set t_Co=256
 "set colorcolumn=110
 
-let mapleader="-"
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 nnoremap <leader><tab> :NERDTreeCWD<CR>
 nnoremap <leader>e :TagbarToggle<CR>
 nnoremap <leader>s :<C-u>call gitblame#echo()<CR>
-nnoremap <leader>c I//<C-c>
+nnoremap <leader>c di'
+nnoremap <leader>C di"
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
 nnoremap <leader>d :GoDef<CR>
-
-nnoremap <tab>h <c-w>h
-nnoremap <tab>j <c-w>j
-nnoremap <tab>k <c-w>k
-nnoremap <tab>l <c-w>l
+nnoremap <leader>r :GoRun<CR>
+nnoremap <leader>h <c-w>h
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
+nnoremap <leader>l <c-w>l
+nnoremap <tab>l gt
+nnoremap <tab>h gT
 iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
 " }}}
 
@@ -138,16 +144,16 @@ autocmd BufReadPost *
 " let g:molokai_original = 1
 let g:solarized_use16 = 1
 " colorscheme vim-monokai-tasty
-colorscheme molokai
+" colorscheme molokai
 set background=dark
-" colorscheme solarized8
+colorscheme solarized8
 
 
 " To use the included lightline.vim theme:
 " let g:lightline = {
 "             \ 'colorscheme': 'monokai_tasty',
 "             \ }
-" 
+"
 " To use the included vim-airline theme:
 " let g:airline_theme='monokai_tasty'
 " }}}
