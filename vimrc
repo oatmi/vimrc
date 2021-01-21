@@ -30,6 +30,7 @@ Plugin 'tomasr/molokai'
 Plugin 'fatih/vim-go'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'lifepillar/vim-solarized8'
+" Plugin 'airblade/vim-gitgutter'
 " Plugin 'patstockwell/vim-monokai-tasty'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -69,7 +70,6 @@ filetype plugin indent on    " required
 syntax on
 set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set backspace=2
-" set redrawtime=1000
 set hlsearch
 set nobackup
 set incsearch
@@ -88,7 +88,7 @@ set ttyfast
 set cursorline
 set diffopt=context:0
 set t_Co=256
-"set colorcolumn=110
+" set colorcolumn=110
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
@@ -97,23 +97,23 @@ nnoremap <leader>e :TagbarToggle<CR>
 nnoremap <leader>s :<C-u>call gitblame#echo()<CR>
 nnoremap <leader>c di'
 nnoremap <leader>C di"
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q<CR>
 nnoremap <leader>d :GoDef<CR>
 nnoremap <leader>r :GoRun<CR>
-nnoremap <leader>h <c-w>h
-nnoremap <leader>j <c-w>j
-nnoremap <leader>k <c-w>k
-nnoremap <leader>l <c-w>l
-nnoremap <tab>l gt
-nnoremap <tab>h gT
+nnoremap <tab>h <c-w>h
+nnoremap <tab>j <c-w>j
+nnoremap <tab>k <c-w>k
+nnoremap <tab>l <c-w>l
+nnoremap <tab>u gt
+nnoremap <tab>i gT
 iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
 " }}}
 
 " AIRLINE {{{
 " let g:airline_theme='luna'
 let g:airline_theme='minimalist'
-let g:airline#extensions#tabline#enabled = 0
+" let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_powerline_fonts = 0
 
 " if !exists('g:airline_symbols')
@@ -142,11 +142,12 @@ autocmd BufReadPost *
 " let g:vim_monokai_tasty_italic = 0
 " let g:rehash256 = 1
 " let g:molokai_original = 1
-let g:solarized_use16 = 1
+" let g:solarized_use16 = 1
 " colorscheme vim-monokai-tasty
-" colorscheme molokai
+" colorscheme solarized8
+colorscheme molokai
 set background=dark
-colorscheme solarized8
+hi Normal guibg=NONE ctermbg=NONE
 
 
 " To use the included lightline.vim theme:
