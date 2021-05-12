@@ -30,6 +30,8 @@ Plugin 'tomasr/molokai'
 Plugin 'fatih/vim-go'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'Yggdroot/indentLine'
+Plugin 'jason0x43/vim-js-indent'
 " Plugin 'airblade/vim-gitgutter'
 " Plugin 'patstockwell/vim-monokai-tasty'
 
@@ -143,10 +145,14 @@ autocmd BufReadPost *
 " let g:rehash256 = 1
 " let g:molokai_original = 1
 " let g:solarized_use16 = 1
+
 " colorscheme vim-monokai-tasty
 " colorscheme solarized8
 colorscheme molokai
+
 set background=dark
+" set background=light
+
 hi Normal guibg=NONE ctermbg=NONE
 
 
