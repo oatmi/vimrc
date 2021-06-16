@@ -97,10 +97,9 @@ let mapleader=" "
 nnoremap <leader><tab> :NERDTreeCWD<CR>
 nnoremap <leader>e :TagbarToggle<CR>
 nnoremap <leader>s :<C-u>call gitblame#echo()<CR>
-nnoremap <leader>c di'
-nnoremap <leader>C di"
 nnoremap <leader>d :GoDef<CR>
-nnoremap <leader>r :GoRun<CR>
+nnoremap <leader>q :q<CR>
+noremap <leader>a :Ag! <cword><cr>
 nnoremap <tab>h <c-w>h
 nnoremap <tab>j <c-w>j
 nnoremap <tab>k <c-w>k
@@ -111,8 +110,8 @@ iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
 " }}}
 
 " AIRLINE {{{
-" let g:airline_theme='luna'
-let g:airline_theme='minimalist'
+let g:airline_theme='luna'
+" let g:airline_theme='minimalist'
 " let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
