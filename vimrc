@@ -27,13 +27,14 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'tomasr/molokai'
-" Plugin 'fatih/vim-go'
-" Plugin 'ycm-core/YouCompleteMe'
+Plugin 'fatih/vim-go'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'lifepillar/vim-solarized8'
-Plugin 'Yggdroot/indentLine'
+" Plugin 'Yggdroot/indentLine'
 Plugin 'jason0x43/vim-js-indent'
 " Plugin 'airblade/vim-gitgutter'
-" Plugin 'patstockwell/vim-monokai-tasty'
+Plugin 'patstockwell/vim-monokai-tasty'
+Plugin 'arcticicestudio/nord-vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -146,8 +147,9 @@ autocmd BufReadPost *
 " let g:solarized_use16 = 1
 
 " colorscheme vim-monokai-tasty
+colorscheme nord
 " colorscheme solarized8
-colorscheme molokai
+" colorscheme molokai
 
 set background=dark
 " set background=light
