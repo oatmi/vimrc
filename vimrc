@@ -30,11 +30,7 @@ Plugin 'tomasr/molokai'
 Plugin 'fatih/vim-go'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'lifepillar/vim-solarized8'
-" Plugin 'Yggdroot/indentLine'
 Plugin 'jason0x43/vim-js-indent'
-" Plugin 'airblade/vim-gitgutter'
-Plugin 'patstockwell/vim-monokai-tasty'
-Plugin 'arcticicestudio/nord-vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -75,7 +71,6 @@ set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set backspace=2
 set hlsearch
 set nobackup
-set incsearch
 set smartcase
 set mouse=v
 set autoindent
@@ -83,39 +78,49 @@ set encoding=utf-8
 set foldmethod=marker
 set foldlevel=4
 set scrolloff=7
-" set relativenumber
-" set number
 set nowrap
 set lazyredraw
 set ttyfast
 set cursorline
 set diffopt=context:0
 set t_Co=256
-" set colorcolumn=110
+set colorcolumn=81
+" set incsearch
+" set relativenumber
+" set number
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 nnoremap <leader><tab> :NERDTreeCWD<CR>
 nnoremap <leader>e :TagbarToggle<CR>
-nnoremap <leader>s :<C-u>call gitblame#echo()<CR>
+nnoremap <leader>b :<C-u>call gitblame#echo()<CR>
 nnoremap <leader>d :GoDef<CR>
 nnoremap <leader>q :q<CR>
-noremap <leader>a :Ag! <cword><cr>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>a :Ag! <cword><cr>
+
 nnoremap <tab>h <c-w>h
 nnoremap <tab>j <c-w>j
 nnoremap <tab>k <c-w>k
 nnoremap <tab>l <c-w>l
 nnoremap <tab>u gt
 nnoremap <tab>i gT
-iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
-" }}}
 
+iabbrev <expr> itime strftime("%Y/%m/%d %H:%M:%S")
+iabbrev <expr> icmt "// Copyright(C) 2021 Baidu Inc. All Rights Reserved.<CR>
+            \//<CR>
+            \// Author  tao (yangtao23@baidu.com)<CR>
+            \// Date    <CR>"
+iabbrev <expr> idbg 'fmt.Printf("debug: %+v\n", '
+
+" }}}
+"
 " AIRLINE {{{
-let g:airline_theme='luna'
-" let g:airline_theme='minimalist'
+" let g:airline_theme='luna'
+let g:airline_theme='minimalist'
 " let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_buffers = 1
 let g:airline_powerline_fonts = 0
 
 " if !exists('g:airline_symbols')
@@ -147,14 +152,15 @@ autocmd BufReadPost *
 " let g:solarized_use16 = 1
 
 " colorscheme vim-monokai-tasty
-colorscheme nord
+" colorscheme nord
 " colorscheme solarized8
 " colorscheme molokai
+colorscheme gruvbox
 
 set background=dark
 " set background=light
 
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 
 " To use the included lightline.vim theme:
