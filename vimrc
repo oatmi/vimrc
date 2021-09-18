@@ -6,19 +6,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
 call vundle#begin()
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
@@ -26,52 +18,20 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
-Plugin 'tomasr/molokai'
-" Plugin 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'jason0x43/vim-js-indent'
-Plugin 'kamykn/spelunker.vim'
 Plugin 'tomlion/vim-solidity'
 
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-"
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-"
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-"
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-"
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+" Plugin 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" Plugin 'tomasr/molokai'
+" Plugin 'lifepillar/vim-solarized8'
+" Plugin 'kamykn/spelunker.vim'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 " }}}
 
 " COMMON CONF {{{
 syntax on
-
-let g:go_list_type = "quickfix"
-
 
 set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set backspace=2
@@ -82,7 +42,7 @@ set mouse=v
 set autoindent
 set encoding=utf-8
 set foldmethod=marker
-set foldlevel=4
+set foldlevel=0
 set scrolloff=7
 set nowrap
 set lazyredraw
@@ -139,6 +99,7 @@ let g:spelunker_white_list_for_user = [
             \'strconv',
             \'uniswap',
             \]
+" }}}
 
 " {{{ coc
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
@@ -242,13 +203,4 @@ set background=dark
 " set background=light
 
 hi Normal guibg=NONE ctermbg=NONE
-
-
-" To use the included lightline.vim theme:
-" let g:lightline = {
-"             \ 'colorscheme': 'monokai_tasty',
-"             \ }
-"
-" To use the included vim-airline theme:
-" let g:airline_theme='monokai_tasty'
 " }}}
