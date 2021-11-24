@@ -51,8 +51,11 @@ set ttyfast
 set cursorline
 set diffopt=context:0
 set t_Co=256
-set colorcolumn=81
+set colorcolumn=101
 set relativenumber
+set sidescroll=1
+set linebreak
+
 " set incsearch
 " set number
 " set list
@@ -107,7 +110,7 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_deadline = "5s"
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
-" nmap <silent> df <Plug>(-definition)
+nmap <silent> df <Plug>(-definition)
 " }}}
 
 " " {{{ coc
@@ -205,8 +208,8 @@ autocmd BufReadPost *
 
 " colorscheme nord
 " colorscheme solarized8
-" colorscheme molokai
-colorscheme gruvbox
+colorscheme molokai
+" colorscheme gruvbox
 
 set background=dark
 " set background=light
