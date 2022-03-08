@@ -20,10 +20,10 @@ Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'tomlion/vim-solidity'
 Plugin 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'ycm-core/YouCompleteMe'
 
 " Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-" Plugin 'tomasr/molokai'
+Plugin 'tomasr/molokai'
 " Plugin 'lifepillar/vim-solarized8'
 " Plugin 'kamykn/spelunker.vim'
 

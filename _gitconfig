@@ -1,8 +1,12 @@
+[http]
+	sslVerify = false
+[user]
+	name = oatmi
+	email = gnayoat@gmail.com
 [alias]
     co = checkout
     ci = commit
     st = status
     df = diff
-
 [credential]
     helper = store
