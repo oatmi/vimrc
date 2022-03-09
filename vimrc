@@ -20,7 +20,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'tomlion/vim-solidity'
 Plugin 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-" Plugin 'ycm-core/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'ryanoasis/vim-devicons'
 
 " Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'tomasr/molokai'
@@ -51,11 +52,12 @@ set ttyfast
 set cursorline
 set diffopt=context:0
 set t_Co=256
-set colorcolumn=101
-set relativenumber
 set sidescroll=1
 set linebreak
+set tags=tags
 
+" set colorcolumn=101
+" set relativenumber
 " set incsearch
 " set number
 " set list
@@ -66,10 +68,12 @@ let mapleader=" "
 nnoremap <leader><tab> :NERDTreeCWD<CR>
 nnoremap <leader>e :TagbarToggle<CR>
 nnoremap <leader>s :<C-u>call gitblame#echo()<CR>
-nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
 nnoremap <leader>a :Ag! <cword><cr>
 nnoremap <leader>f :%! gofmt<CR>
+
+autocmd FileType go nmap <Leader>d <Plug>(go-def)
 
 nnoremap <tab>h <c-w>h
 nnoremap <tab>j <c-w>j
@@ -210,6 +214,7 @@ autocmd BufReadPost *
 " colorscheme solarized8
 colorscheme molokai
 " colorscheme gruvbox
+" colorscheme new-moon
 
 set background=dark
 " set background=light
